@@ -1,2 +1,3 @@
 # url-shortener
-A URL shortener, built with Go.
+
+Got bored so I thought I'd teach myself some Go.
