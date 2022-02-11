@@ -1,9 +1,9 @@
-package urlshortener
+package handler
 
 import (
 	"fmt"
 )
 
-func test() {
+func Test() {
 	fmt.Println("test")
 }
