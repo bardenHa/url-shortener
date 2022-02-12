@@ -18,8 +18,21 @@ func main() {
 
 	mapHandler := handler.MapHandler(pathsToUrls, mux)
 
+	yaml := `
+- path: /twtr
+  url: https://twitter.com/
+- path: /me
+  url: https://github.com/bardenHa
+`
+
+	yamlHandler, err := handler.YAMLHandler([]byte(yaml), mapHandler)
+
+	if err != nil {
+		panic(err)
+	}
+
 	fmt.Println("Starting the server on :8080")
-	http.ListenAndServe(":8080", mapHandler)
+	http.ListenAndServe(":8080", yamlHandler)
 }
 
 func welcome(writer http.ResponseWriter, request *http.Request) {
