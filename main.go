@@ -20,7 +20,8 @@ func main() {
 	mapHandler := handler.MapHandler(pathsToUrls, mux)
 
 	yaml, err := ioutil.ReadFile("shortenURLs.yaml")
-	if err == nil {
+
+	if err != nil {
 		panic(err)
 	}
 
