@@ -1,0 +1,4 @@
+- path: /twtr
+  url: https://twitter.com/
+- path: /me
+  url: https://github.com/bardenHa

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
 
 	"github.com/bardenHa/urlshortener/handler"
@@ -18,12 +19,10 @@ func main() {
 
 	mapHandler := handler.MapHandler(pathsToUrls, mux)
 
-	yaml := `
-- path: /twtr
-  url: https://twitter.com/
-- path: /me
-  url: https://github.com/bardenHa
-`
+	yaml, err := ioutil.ReadFile("shortenURLs.yaml")
+	if err == nil {
+		panic(err)
+	}
 
 	yamlHandler, err := handler.YAMLHandler([]byte(yaml), mapHandler)
 
